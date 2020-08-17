@@ -12,72 +12,90 @@ import csvLogo from '../Images/inspect/Front-End/Page/Dashboard/Row/Group 3/file
 import reportLogo from '../Images/inspect/Front-End/Page/Dashboard/Row/Group 2/statistics-report.png'
 import calLogo from '../Images/inspect/Front-End/Page/Dashboard/Row/Group/calendar.png'
 import _ from 'lodash';
-import { Tab, Tabs, Modal,ModalBody,ModalTitle,ModalFooter,Button} from 'react-bootstrap';
+import { Tab, Tabs, Modal, Button } from 'react-bootstrap';
 
 class Campaign extends Component {
     constructor() {
+        //sessionStorage.setItem('cData',Data.data)
         super();
         this.state = {
             dataToDisplay: [],
             startDate: new Date(),
             datePickerIsOpen: false,
-            showPricing:false
+            showPricing: false,
+            pricingData: {},
+            Data: Data.data
         }
     }
-    handleChange(date) {
-        this.setState({
-            startDate: date
-        });
-    }
-    openDatePicker() {
-        this.setState({
-            datePickerIsOpen: !this.state.datePickerIsOpen,
-        });
-    };
+
     componentDidMount() {
         this.filterData('upcoming')
 
     }
+    handleDateChange(date) {
+        const a = _.find(this.state.Data, (o) => { return (o.uniqueKey == this.state.clickedData.original.uniqueKey) });
+        a.createdOn = date
+        this.setState({
+            startDate: date,
+            datePickerIsOpen: !this.state.datePickerIsOpen,
+        }, () => this.filterData(this.state.selectedTab));
+    }
+    openDatePicker(props) {
+        this.setState({
+            datePickerIsOpen: !this.state.datePickerIsOpen,
+            startDate: new Date(props.original[props.column.id]),
+            clickedData: props,
+        });
+    };
     filterData(param) {
-
+        console.log(this.state.Data, 'complete Data', param, 'selected tab')
 
         if (param == 'upcoming') {
-            var filteredData = _.filter(Data.data, (item) => Moment(item.createdOn).isAfter(new Date(), 'day'))
+            var filteredData = _.filter(this.state.Data, (item) => Moment(item.createdOn).isAfter(new Date(), 'day'))
             this.setState({
-                dataToDisplay: filteredData
+                dataToDisplay: filteredData,
+                selectedTab: param
             })
         }
         else if (param == 'live') {
-            var filteredData = _.filter(Data.data, (item) => Moment(item.createdOn).isSame(new Date(), 'day'))
+            var filteredData = _.filter(this.state.Data, (item) => Moment(item.createdOn).isSame(new Date(), 'day'))
             this.setState({
-                dataToDisplay: filteredData
+                dataToDisplay: filteredData,
+                selectedTab: param
+
             })
         }
         else {
-            var filteredData = _.filter(Data.data, (item) => Moment(item.createdOn).isBefore(new Date(), 'day'))
+            var filteredData = _.filter(this.state.Data, (item) => Moment(item.createdOn).isBefore(new Date(), 'day'))
             this.setState({
-                dataToDisplay: filteredData
+                dataToDisplay: filteredData,
+                selectedTab: param
+
             })
         }
-
-
 
     }
     getDateDifference(date) {
-        if(this.state)
-        var a = Moment(new Date(date));
-        var b = Moment(new Date());
-        if(b>a){
-        return b.diff(a, 'days')+' Days'
+        if (this.state.selectedTab == 'live') {
+            return 'Today'
         }
-        if(a>b){
-        return a.diff(b,'days')+ ' Days'
-        }
-        else {
-            return ''
-        }
-        
-
+        else
+            if (this.state.selectedTab == 'upcoming') {
+                var a = Moment(new Date(date));
+                var b = Moment(new Date());
+                return a.diff(b, 'days') + ' Days to go'
+            }
+            else {
+                var a = Moment(new Date(date));
+                var b = Moment(new Date());
+                return b.diff(a, 'days') + ' Days Ago'
+            }
+    }
+    onClickingPrice(props) {
+        this.setState({
+            showPricing: true,
+            pricingData: props.original
+        })
     }
     render() {
         const columns = [{
@@ -95,9 +113,10 @@ class Campaign extends Component {
             Header: 'COMPAIGN',
             accessor: 'name',
             Cell: props => {
-                return (<div className="d-flex justify-content-start">
-                    <img style={{ height: 50, width: 50, borderRadius: 25 }} className="p-2" src={props.original['image_url']} alt="csv" />
-                    <p style={{ alignSelf: 'center' }}>{props.original[props.column.id]}</p>
+                return (<div className="d-flex justify-content">
+                    <img style={{ height: 50, width: 50}} className="p-2" src={props.original['image_url']} alt="csv" />
+                    <div><p style={{ alignSelf: 'center' }}>{props.original[props.column.id]}</p>
+                        <p style={{ alignSelf: 'center' }}>{props.original.region}</p></div>
                 </div>)
             }
         },
@@ -105,8 +124,8 @@ class Campaign extends Component {
             Header: 'VIEW',
             accessor: 'price',
             Cell: props => {
-                return (<div onClick={()=>this.setState({showPricing:true})} className="d-flex justify-content-start">
-                    <img className="p-2" src={priceLogo} alt="csv" />
+                return (<div onClick={() => this.onClickingPrice(props)} className="d-flex justify-content-start">
+                    <img style={{ height: 50, width: 50, borderRadius: 25 }} className="p-2" src={priceLogo} alt="csv" />
                     <p style={{ alignSelf: 'center' }}>{'Pricing'}</p>
                 </div>)
             }
@@ -116,15 +135,16 @@ class Campaign extends Component {
             accessor: 'createdOn',
             Cell: props => {
                 return (
-                    <div className="d-flex justify-content-start">
-                        <img className="p-2" src={csvLogo} alt="csv" />
-                        <p style={{ alignSelf: 'center' }}>{'CSV'}</p>
+                    <div style={{ justifyContent: 'center', alignItems: 'center' }} className="d-flex justify-content-start">
+                        <img style={{ height: 40, width: 35 }} className="p-2" src={csvLogo} alt="csv" />
+                        <p style={{ alignSelf: 'center', marginTop: 20 }}>{'CSV'}</p>
 
-                        <img className="p-2" src={reportLogo} alt="csv" />
-                        <p style={{ alignSelf: 'center' }}> {'Report'}</p>
+                        <img style={{ height: 40, width: 35 }} className="p-2" src={reportLogo} alt="csv" />
+                        <p style={{ alignSelf: 'center', marginTop: 20 }}> {'Report'}</p>
 
-                        <img onClick={() => this.openDatePicker()} className="p-2" src={calLogo} alt="csv" />
-                        <p style={{ alignSelf: 'center' }}>{'Schedule Again'}</p>
+                        <img style={{ height: 40, width: 35 }}
+                            onClick={() => this.openDatePicker(props)} className="p-2" src={calLogo} alt="csv" />
+                        <p style={{ alignSelf: 'center', marginTop: 20 }}>{'Schedule Again'}</p>
                     </div>)
             }
         },]
@@ -143,30 +163,32 @@ class Campaign extends Component {
                         data={this.state.dataToDisplay}
                         columns={columns}
                         showPagination={false}
-                        minRows={Data.data.length}
+                        minRows={0}
                         sortable={false} />
                     <DatePicker
                         selected={this.state.startDate}
-                        onChange={() => alert('hi')}
-                        onClickOutside={this.openDatePicker}
+                        onChange={(date) => this.handleDateChange(date)}
+                        onClickOutside={() => this.setState({ datePickerIsOpen: false })}
                         open={this.state.datePickerIsOpen}
                         customInput={<div />}
                     /></div>
 
- <Modal show={this.state.showPricing}>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={()=>this.setState({showPricing:false})}>
-            Close
+                <Modal show={this.state.showPricing}>
+
+                    <Modal.Body>
+                        <img style={{ height: 100, width: 100 }} className="p-2" src={this.state.pricingData["image_url"]} alt="csv" />
+                        <div>{this.state.pricingData.name}</div>
+                        <div>{this.state.pricingData.region}</div>
+                        <div>Pricing</div>
+                        <div>1 week- 1 month</div><div>{this.state.pricingData.price && this.state.pricingData.price.weekly}</div>
+                        <div>6 Months</div><div>{this.state.pricingData.price && this.state.pricingData.price.halfYearly}</div>
+                        <div>1 Year</div><div>{this.state.pricingData.price && this.state.pricingData.price.anually}</div>
+                        <Button variant="secondary" onClick={() => this.setState({ showPricing: false })}>
+                            Close
           </Button>
-          <Button variant="primary" onClick={()=>this.setState({showPricing:false})}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
-      </Modal>
+                    </Modal.Body>
+
+                </Modal>
             </div>
         )
     }

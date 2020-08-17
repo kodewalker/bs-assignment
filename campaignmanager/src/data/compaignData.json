@@ -1,39 +1,99 @@
 {
     "data": [{
+      "uniqueKey":1,
         "name": "Test Whatsapp",
         "region": "US",
-        "createdOn": "17-Aug-2020",
-        "price": "Price info of Test Whatsapp",
-        "csv": "Some CSV link for Whatsapp",
-        "report": "Some report link for Whatsapp",
+        "createdOn": "24-Aug-2020",
+        "price": {
+          "weekly":100,
+          "halfYearly":500,
+          "annualy":900
+        },
         "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg" 
       },
       {
+        "uniqueKey":2,
         "name": "Super Jewels Quest",
         "region": "CA, FR",
         "createdOn": "18-Aug-2020",
-        "price": "Price info of Super Jewels Quest",
-        "csv": "Some CSV link for Super Jewels Quest",
-        "report": "Some report link for Super Jewels Ques",
+        "price": {
+          "weekly":100,
+          "halfYearly":500,
+          "annualy":900
+        },
         "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
       },
       {
+        "uniqueKey":3,
         "name": "Mole Slayer",
         "region": "FR",
-        "createdOn": 1559806711124,
-        "price": "Price info of Mole Slayer",
-        "csv": "Some CSV link for Mole Slayer",
-        "report": "Some report link for Mole Slayer",
+        "createdOn": "1-Aug-2020",
+        "price": {
+          "weekly":100,
+          "halfYearly":500,
+          "annualy":900
+        },
         "image_url":"https://resize.indiatvnews.com/en/resize/newbucket/715_-/2020/06/pubg-mobile-1592987817.jpg"
       },
       {
+        "uniqueKey":4,
         "name": "Mancala Mix",
         "region": "JP",
-        "createdOn": 1559806680124,
-        "price": "Price info of Mancala Mix",
-        "csv": "Some CSV link for Mancala Mix",
-        "report": "Some report link for Mancala Mix",
+        "createdOn": "10-Aug-2020",
+        "price": {
+          "weekly":110,
+          "halfYearly":600,
+          "annualy":1000
+        },
         "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
-      }
+      },
+      {
+        "uniqueKey":5,
+          "name": "Test Whatsapp",
+          "region": "US",
+          "createdOn": "24-Aug-2020",
+          "price": {
+            "weekly":100,
+            "halfYearly":500,
+            "annualy":900
+          },
+          "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg" 
+        },
+        {
+          "uniqueKey":6,
+          "name": "Super Jewels Quest",
+          "region": "CA, FR",
+          "createdOn": "18-Aug-2020",
+          "price": {
+            "weekly":100,
+            "halfYearly":500,
+            "annualy":900
+          },
+          "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
+        },
+        {
+          "uniqueKey":7,
+          "name": "Mole Slayer",
+          "region": "FR",
+          "createdOn": "1-Aug-2020",
+          "price": {
+            "weekly":100,
+            "halfYearly":500,
+            "annualy":900
+          },
+          "image_url":"https://resize.indiatvnews.com/en/resize/newbucket/715_-/2020/06/pubg-mobile-1592987817.jpg"
+        },
+        {
+          "uniqueKey":8,
+          "name": "Mancala Mix",
+          "region": "JP",
+          "createdOn": "10-Aug-2020",
+          "price": {
+            "weekly":110,
+            "halfYearly":600,
+            "annualy":1000
+          },
+          "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
+        }
     ]
   }
