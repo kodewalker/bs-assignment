@@ -3,7 +3,7 @@ import { Tab,Tabs } from 'react-bootstrap';
 
 export const TabsComponent =()=>{
     return(
-        <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
+        <Tabs defaultActiveKey="upcoming" id="uncontrolled-tab-example">
                     <Tab styles={{margin:10}} eventKey="upcoming" title="Upcoming Campaigns">
                     </Tab>
                     <Tab eventKey="live" title="Live Campaigns">

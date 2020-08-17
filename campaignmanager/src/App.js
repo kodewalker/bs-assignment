@@ -5,7 +5,7 @@ import Campaign from './page/campaign';
 
 function App() {
   return (
-    <div className="App">
+    <div id={"app"} className="App">
       <Campaign/>
     </div>
   );

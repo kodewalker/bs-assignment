@@ -2,20 +2,20 @@
     "data": [{
         "name": "Test Whatsapp",
         "region": "US",
-        "createdOn": 1559807714999,
+        "createdOn": "17-Aug-2020",
         "price": "Price info of Test Whatsapp",
         "csv": "Some CSV link for Whatsapp",
         "report": "Some report link for Whatsapp",
-        "image_url":"Some image url of the campaign" 
+        "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg" 
       },
       {
         "name": "Super Jewels Quest",
         "region": "CA, FR",
-        "createdOn": 1559806715124,
+        "createdOn": "18-Aug-2020",
         "price": "Price info of Super Jewels Quest",
         "csv": "Some CSV link for Super Jewels Quest",
         "report": "Some report link for Super Jewels Ques",
-        "image_url":"Some image url of the campaign"
+        "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
       },
       {
         "name": "Mole Slayer",
@@ -24,7 +24,7 @@
         "price": "Price info of Mole Slayer",
         "csv": "Some CSV link for Mole Slayer",
         "report": "Some report link for Mole Slayer",
-        "image_url":"Some image url of the campaign"
+        "image_url":"https://resize.indiatvnews.com/en/resize/newbucket/715_-/2020/06/pubg-mobile-1592987817.jpg"
       },
       {
         "name": "Mancala Mix",
@@ -33,7 +33,7 @@
         "price": "Price info of Mancala Mix",
         "csv": "Some CSV link for Mancala Mix",
         "report": "Some report link for Mancala Mix",
-        "image_url":"Some image url of the campaign"
+        "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
       }
     ]
   }
