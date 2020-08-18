@@ -1,5 +1,6 @@
 import React from 'react';
 import Moment from 'moment';
+import '../../App.css';
 
 export const DateComponent = (props) => {
     const { selectedTab, date } = props
@@ -22,7 +23,8 @@ export const DateComponent = (props) => {
     }
     
     return (
-        <div><div>{Moment(new Date(date)).format("DD-MMM-YYYY")}</div>
+        <div className="justify-content-start action">
+            <div>{Moment(new Date(date)).format("DD-MMM-YYYY")}</div>
             <div>{getDateDifference(date)}</div>
         </div>
     )

@@ -12,6 +12,7 @@ import { PricingModal } from './components/pricingModal';
 import { DateComponent } from './components/dateColumn';
 import {NameComponent} from './components/nameColumn';
 import {PriceComponent} from './components/priceColumn';
+import '../App.css';
 
 class Campaign extends Component {
     constructor() {
@@ -77,22 +78,26 @@ class Campaign extends Component {
         const columns = [{
             Header: 'DATE',
             accessor: 'createdOn',
+            width:180,
             Cell: props => <DateComponent date={props.original[props.column.id]} selectedTab={selectedTab} />
 
         },
         {
             Header: 'COMPAIGN',
             accessor: 'name',
+            width:400,
             Cell: props => <NameComponent data={props}/>
         },
         {
             Header: 'VIEW',
             accessor: 'price',
+            width:180,
             Cell: props => <PriceComponent onClick={() => this.onClickingPrice(props)}/>
         },
         {
             Header: 'ACTIONS',
             accessor: 'createdOn',
+            width:500,
             Cell: props => <Actions onClick={() => this.openDatePicker(props)} />
         },]
         return (
@@ -100,7 +105,7 @@ class Campaign extends Component {
                 <h3>{'Manage Campaigns'}</h3>
                 <TabsComponent
                     onSelect={(k) => this.filterData(k)} />
-                <div style={{ marginTop: 100, marginLeft: 100, marginRight: 100 }}>
+                <div className="App-table">
                     <ReactTable
                         data={dataToDisplay}
                         columns={columns}
