@@ -15,7 +15,6 @@ import {PriceComponent} from './components/priceColumn';
 
 class Campaign extends Component {
     constructor() {
-        //sessionStorage.setItem('cData',Data.data)
         super();
         this.state = {
             dataToDisplay: [],
