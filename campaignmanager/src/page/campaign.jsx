@@ -18,7 +18,6 @@ class Campaign extends Component {
         super();
         this.state = {
             dataToDisplay: [],
-            startDate: new Date(),
             datePickerIsOpen: false,
             showPricing: false,
             pricingData: {},
@@ -55,7 +54,6 @@ class Campaign extends Component {
         const a = _.find(Data, (o) => { return (o.uniqueKey === clickedData.original.uniqueKey) });
         a.createdOn = date
         this.setState({
-            startDate: date,
             datePickerIsOpen: !datePickerIsOpen,
         }, () => this.filterData(selectedTab));
     }
@@ -63,7 +61,6 @@ class Campaign extends Component {
     openDatePicker(props) {
         this.setState({
             datePickerIsOpen: !this.state.datePickerIsOpen,
-            startDate: new Date(props.original[props.column.id]),
             clickedData: props,
         });
     };
@@ -75,7 +72,7 @@ class Campaign extends Component {
         })
     }
     render() {
-        const { dataToDisplay, startDate, datePickerIsOpen, pricingData, showPricing, selectedTab } = this.state
+        const { dataToDisplay, datePickerIsOpen, pricingData, showPricing, selectedTab } = this.state
 
         const columns = [{
             Header: 'DATE',
@@ -112,7 +109,6 @@ class Campaign extends Component {
                         sortable={false} />
                 {/* calender to select date */}
                     <DatePicker
-                        selected={startDate}
                         onChange={(date) => this.handleDateChange(date)}
                         onClickOutside={() => this.setState({ datePickerIsOpen: false })}
                         open={datePickerIsOpen}
