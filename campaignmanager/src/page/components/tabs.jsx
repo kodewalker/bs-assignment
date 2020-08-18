@@ -1,10 +1,10 @@
 import React from 'react';
 import { Tab,Tabs } from 'react-bootstrap';
 
-export const TabsComponent =()=>{
+export const TabsComponent =(props)=>{
     return(
-        <Tabs defaultActiveKey="upcoming" id="uncontrolled-tab-example">
-                    <Tab styles={{margin:10}} eventKey="upcoming" title="Upcoming Campaigns">
+        <Tabs onSelect={(k) => props.onSelect(k)} defaultActiveKey="upcoming" id="uncontrolled-tab-example">
+                    <Tab styles={{ margin: 10 }} eventKey="upcoming" title="Upcoming Campaigns">
                     </Tab>
                     <Tab eventKey="live" title="Live Campaigns">
                     </Tab>

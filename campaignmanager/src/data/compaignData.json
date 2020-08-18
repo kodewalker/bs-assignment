@@ -3,11 +3,11 @@
       "uniqueKey":1,
         "name": "Test Whatsapp",
         "region": "US",
-        "createdOn": "24-Aug-2020",
+        "createdOn": "1559807714999",
         "price": {
           "weekly":100,
           "halfYearly":500,
-          "annualy":900
+          "annually":900
         },
         "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg" 
       },
@@ -15,11 +15,11 @@
         "uniqueKey":2,
         "name": "Super Jewels Quest",
         "region": "CA, FR",
-        "createdOn": "18-Aug-2020",
+        "createdOn": "1559806711124",
         "price": {
           "weekly":100,
           "halfYearly":500,
-          "annualy":900
+          "annually":900
         },
         "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
       },
@@ -31,7 +31,7 @@
         "price": {
           "weekly":100,
           "halfYearly":500,
-          "annualy":900
+          "annually":900
         },
         "image_url":"https://resize.indiatvnews.com/en/resize/newbucket/715_-/2020/06/pubg-mobile-1592987817.jpg"
       },
@@ -43,7 +43,7 @@
         "price": {
           "weekly":110,
           "halfYearly":600,
-          "annualy":1000
+          "annually":1000
         },
         "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
       },
@@ -55,7 +55,7 @@
           "price": {
             "weekly":100,
             "halfYearly":500,
-            "annualy":900
+            "annually":900
           },
           "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg" 
         },
@@ -67,7 +67,7 @@
           "price": {
             "weekly":100,
             "halfYearly":500,
-            "annualy":900
+            "annually":900
           },
           "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
         },
@@ -79,7 +79,7 @@
           "price": {
             "weekly":100,
             "halfYearly":500,
-            "annualy":900
+            "annually":900
           },
           "image_url":"https://resize.indiatvnews.com/en/resize/newbucket/715_-/2020/06/pubg-mobile-1592987817.jpg"
         },
@@ -91,7 +91,54 @@
           "price": {
             "weekly":110,
             "halfYearly":600,
-            "annualy":1000
+            "annually":1000
+          },
+          "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
+        },{
+          "uniqueKey":9,
+          "name": "Super Jewels Quest",
+          "region": "CA, FR",
+          "createdOn": "18-Aug-2020",
+          "price": {
+            "weekly":100,
+            "halfYearly":500,
+            "annually":900
+          },
+          "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
+        },
+        {
+          "uniqueKey":10,
+          "name": "Mole Slayer",
+          "region": "FR",
+          "createdOn": "1-Aug-2020",
+          "price": {
+            "weekly":100,
+            "halfYearly":500,
+            "annually":900
+          },
+          "image_url":"https://resize.indiatvnews.com/en/resize/newbucket/715_-/2020/06/pubg-mobile-1592987817.jpg"
+        },
+        {
+          "uniqueKey":11,
+          "name": "Mancala Mix",
+          "region": "JP",
+          "createdOn": "10-Aug-2020",
+          "price": {
+            "weekly":110,
+            "halfYearly":600,
+            "annually":1000
+          },
+          "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
+        },
+        {
+          "uniqueKey":12,
+          "name": "Super Jewels Quest",
+          "region": "CA, FR",
+          "createdOn": "18-Aug-2020",
+          "price": {
+            "weekly":100,
+            "halfYearly":500,
+            "annually":900
           },
           "image_url":"https://cdn.mos.cms.futurecdn.net/MMwRCjVEaoJPP4dBBugWFY-650-80.jpg"
         }
