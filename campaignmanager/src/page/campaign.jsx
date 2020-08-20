@@ -13,6 +13,7 @@ import { DateComponent } from './components/dateColumn';
 import {NameComponent} from './components/nameColumn';
 import {PriceComponent} from './components/priceColumn';
 import '../App.css';
+import logo from '../Images/logo.png';
 
 class Campaign extends Component {
     constructor() {
@@ -85,7 +86,7 @@ class Campaign extends Component {
         {
             Header: 'COMPAIGN',
             accessor: 'name',
-            width:400,
+            width:200,
             Cell: props => <NameComponent data={props}/>
         },
         {
@@ -97,14 +98,19 @@ class Campaign extends Component {
         {
             Header: 'ACTIONS',
             accessor: 'createdOn',
-            width:500,
+            width:600,
             Cell: props => <Actions onClick={() => this.openDatePicker(props)} />
         },]
         return (
             <div>
-                <h3>{'Manage Campaigns'}</h3>
+                <div className="d-flex justify-content-start TitleBar">
+                <img  className="logo" src={logo} alt="csv" /></div>
+                <h3 className="Title">{'Manage Campaigns'}</h3>
+                <div 
+                    className="d-flex justify-content-start Tabs">
                 <TabsComponent
                     onSelect={(k) => this.filterData(k)} />
+                    </div>
                 <div className="App-table">
                     <ReactTable
                         data={dataToDisplay}

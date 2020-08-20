@@ -2,11 +2,104 @@
   text-align: center;
 }
 
+.TitleBar{
+width: 1440px;
+height: 80px;
+/* justify-content :center; */
+align-items:center;
+background: #1F2640;
+}
+.AppName{
+width: 147px;
+height: 45px;
+left: 182px;
+background: #ffffff;
+
+}
+/* Manage Campaigns */
+.Title{
+/* position: absolute; */
+width: 430px;
+height: 50px;
+margin-left: 182px;
+margin-top: 40px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 48px;
+line-height: 50px;
+color: #2B416C;
+}
+.logo{
+  margin-left: 200px;
+  
+  height: 60px;
+  width: 60px
+}
+
+.Tabs{
+/* position: absolute; */
+/* width: 178px; */
+/* height: 28px; */
+margin-left: 200px;
+margin-top: 40px;
+/* identical to box height, or 156% */
+
+}
+
+
+.Tab{
+  background-color: white;
+  color: #83A515;
+}
+
+
+/* Active tab */
+.active{
+  background-color: red;
+  color: white;
+}
+
 .App-table {
-   margin-top: 10%;
-   margin-left: 5%;
-   margin-right: 5%;
-   height: 100%;
+   /* position: absolute; */
+width: 1077px;
+height: 30px;
+left: 181px;
+margin-top: 39px;
+margin-left: 181px;
+
+background: #F1F1F4;
+}
+
+.Date{
+  /* position: absolute; */
+height: 24px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+color: #2B416C;
+}
+
+.Days{
+height: 24px;
+left: 0%;
+right: 93.36%;
+top: calc(50% - 24px/2 + 3px);
+
+font-family: Roboto;
+font-style: italic;
+font-weight: normal;
+font-size: 14px;
+line-height: 24px;
+/* identical to box height, or 171% */
+
+color: #7788A3;
 }
 
 .action {
@@ -15,18 +108,144 @@ justify-content: center;
 }
 
 .actionItem {
-  height: 38px;
-  width: 38px
+  height: 24px;
+  width: 18px;
+  margin-right: 6px;
+  margin-left: 40px;
+
 }
 .actionLabels{
   align-self: center;
-  margin-top: 20px
+  margin-top: 20px;
+
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #7788A3;
 }
 .mainImage{
-  height: 50px;
-  width: 50px
+  height: 40px;
+  width: 40px
 }
 .name{
-  align-self:center;
+  /* align-self:center; */
   margin-top: 0;
+
+height: 24px;
+left: 21.46%;
+right: 70.64%;
+top: calc(50% - 24px/2 - 23px);
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+color: #556789;
+}
+
+.region {
+
+font-family: Roboto;
+font-style: italic;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #9CA2B7;
+}
+
+.pricingImg {
+
+/* position: absolute; */
+height: 24px;
+width: 24px;
+
+}
+
+.pricingLabel {
+  margin-left: 6px;
+  align-self: center;
+  margin-top: 20px;
+ font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #7788A3;
+
+}
+
+.priceColumn {
+justify-content: center;
+align-items: center;
+flex-direction: row;
+flex: d
+}
+
+.gameName {
+  margin-top :40px;
+  font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+color: #2B416C;
+}
+.regionModal{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+margin-top :20px;
+color: #9CA2B7;
+}
+.Pricing{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+/* identical to box height, or 133% */
+color: #2B416C;
+margin-top: 30px;
+
+}
+.pricingRow{
+height: 24px;
+left: 5%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 24px;
+color: #7788A3;
+/* identical to box height, or 150% */
+}
+
+.price{
+  font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+text-align: right;
+
+color: #556789;
+}
+.button{
+  margin-top: 55px;
+  color: #181B34;
+  background: #FFFFFF;
+border-radius: 3px;
 }

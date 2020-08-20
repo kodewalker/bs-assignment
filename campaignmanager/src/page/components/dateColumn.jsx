@@ -24,8 +24,8 @@ export const DateComponent = (props) => {
     
     return (
         <div className="justify-content-start action">
-            <div>{Moment(new Date(date)).format("DD-MMM-YYYY")}</div>
-            <div>{getDateDifference(date)}</div>
+            <div className="Date">{Moment(new Date(date)).format("DD-MMM-YYYY")}</div>
+            <div className="Days">{getDateDifference(date)}</div>
         </div>
     )
 }

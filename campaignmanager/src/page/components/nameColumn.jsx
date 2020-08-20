@@ -8,8 +8,8 @@ export const NameComponent = (props) => {
         <div className="d-flex justify-content-start action">
             <img className="p-2 mainImage" src={data.original['image_url']} />
             <div style={{ marginTop: 10 }}>
-                <div>{data.original[data.column.id]}</div>
-                <div>{data.original.region}</div></div>
+                <div className="name">{data.original[data.column.id]}</div>
+                <div className="region">{data.original.region}</div></div>
         </div>
 
     )
